@@ -1,0 +1,59 @@
+backend
+
+1. Create virtual env
+python -m venv env
+
+2. Active env
+env/Scripts/activate.bat
+
+$ pip install -r requirements.txt
+
+3. requirement
+asgiref
+Django
+* django-cors-headers --> django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS).
+djangorestframework
+djangorestframework-simplejwt
+PyJWT
+pytz
+sqlparse
+psycopg2-binary
+python-dotenv
+
+4. install django
+$ django-admin startproject backend
+
+5. create app
+$ python manage.py startapp api
+
+6. settings.py
+from datetime import timedelta
+from dotenv import load_dotenv
+import os
+
+load_dotnet()
+
+ALLOWED_HOSTS = ["*"]
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+}
+
+........................................
+frontend
+
+1. create react project
+npm create vite@latest frontend -- --template react
+
+2. install packages
+npm install axios react-router-dom jwt-decode
