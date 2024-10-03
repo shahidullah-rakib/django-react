@@ -57,3 +57,8 @@ npm create vite@latest frontend -- --template react
 
 2. install packages
 npm install axios react-router-dom jwt-decode
+
+...........................................
+deployment
+
+1. choreo.dev
